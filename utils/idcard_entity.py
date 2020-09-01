@@ -77,7 +77,7 @@ class IDCard:
 
     def get_gender(self):
         """通过身份证号获取性别， 女生：0，男生：1"""
-        return ["男","女"][int(self.__id[16:17]) % 2]
+        return ["女","男"][int(self.__id[16:17]) % 2]
 
     def get_nation(self):
         return self.__nation
