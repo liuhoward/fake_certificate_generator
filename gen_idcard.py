@@ -84,7 +84,7 @@ def generator(idcard_info, name_font,other_font,bdate_font,
     ret, binary = cv2.threshold(gray, 10, 128, cv2.THRESH_OTSU)
     #从OpenCV 3.2开始，findContours不再修改源图像，而是将修改后的图像作为三个返回参数中的第一个返回
     #可以用help(cv2.findContours)来查看具体的返回值
-    _, contours, _= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, _= cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     #按轮廓的面积排序
     contours.sort(key=cv2.contourArea, reverse=True)
     # cv2.drawContours(im, [contours[0]], -1, (0, 255, 0), 3)
