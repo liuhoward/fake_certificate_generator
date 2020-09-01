@@ -76,9 +76,12 @@ def generator(idcard_info, name_font,other_font,bdate_font,
     #背面信息
     draw.text((1050, 2750), org, fill=(0, 0, 0), font=other_font)
     draw.text((1050, 2895), valid_range, fill=(0, 0, 0), font=other_font)
-    avatar = cv2.cvtColor(np.asarray(avatar), cv2.COLOR_RGBA2BGRA)
+    #avatar = cv2.cvtColor(np.asarray(avatar), cv2.COLOR_RGBA2BGRA)
+    avatar = avatar.resize((500, 670))
+    avatar = avatar.convert('RGBA')
+    im.paste(avatar, (1500, 690), mask=avatar)
     im = cv2.cvtColor(np.asarray(im), cv2.COLOR_RGBA2BGRA)
-    im = paste_photo(avatar, im, (500, 670), (690, 1500))
+    #im = paste_photo(avatar, im, (500, 670), (690, 1500))
     #正反面图像分别保存
     gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     ret, binary = cv2.threshold(gray, 10, 128, cv2.THRESH_OTSU)
