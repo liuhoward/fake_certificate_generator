@@ -122,9 +122,10 @@ if __name__=="__main__":
     name = "张三"
     nation = "土家"
     idcard = IDCard(name,nation,addr,id,provinceName,cityName)
+    valid_range='2020.02.16-2030.02.16'
     idcard_empty_path = "resource/bkimg/idcard_empty.png"
     idcard_photo_path = "resource/bkimg/idcard_avatar.png"
     bk_path = "resource/bkimg/black.jpg"
     idcard_save_dir = "res/"
     generator(idcard, name_font, other_font, bdate_font, id_font,idcard_empty_path,
-              idcard_photo_path,idcard_save_dir,bk_path)
+              idcard_photo_path,idcard_save_dir,bk_path,valid_range)
