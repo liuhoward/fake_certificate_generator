@@ -23,7 +23,7 @@ def paste_photo(img, img_back, zoom_size, center):
     return img_back
 
 def generator(idcard_info, name_font,other_font,bdate_font,
-              id_font,idcard_empty_path,idcard_photo_path,save_dir,bk_path=None):
+              id_font,idcard_empty_path,idcard_photo_path,save_dir,bk_path=None,valid_range='2020.02.16-2030.02.16'):
     # 得到身份证信息
     name = idcard_info.get_name()
     gender = idcard_info.get_gender()
@@ -31,12 +31,9 @@ def generator(idcard_info, name_font,other_font,bdate_font,
     year = str(idcard_info.get_birth_year())
     mon = str(idcard_info.get_birth_month())
     day = str(idcard_info.get_birth_day())
-    org = idcard_info.get_province_name() + idcard_info.get_city_name() + '公安局'
-    valid_start = year+'.'
-    valid_start = valid_start+'0'+mon if len(mon) == 1 else valid_start+ mon
-    valid_start = valid_start+'.0'+day if len(day) == 1 else valid_start + "."+day
-    valid_end = str(int(year)+20)+valid_start[4:]
-    valid_range = valid_start+'-'+valid_end
+    #org = idcard_info.get_province_name() + idcard_info.get_city_name() + '公安局'
+    org = idcard_info.get_city_name() + '公安局'
+    
     addr = idcard_info.get_addr()
     idn = idcard_info.get_id()
 
