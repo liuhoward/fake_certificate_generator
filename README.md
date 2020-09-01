@@ -10,6 +10,7 @@ if no pip module found on your machine,you should install one first
 
 usage
 ====
+* extract photo: https://burner.bonanza.com/
 
 * generate idcard image
 ```
